@@ -30,7 +30,7 @@ public class ClientHandler implements Runnable {
 			String serlvetName = ServerContext.getServletNameByURI(requestURI);
 			
 			if (serlvetName != null) {
-				Class cls = Class.forName(serlvetName);
+				Class<?> cls = Class.forName(serlvetName);
 				
 				HttpServlet servlet = (HttpServlet) cls.newInstance();
 				servlet.service(request, response);
@@ -56,7 +56,6 @@ public class ClientHandler implements Runnable {
 					System.out.println("文件不存在.");
 				}
 			}
-			
 		} catch (EmptyRequestException e) {
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
