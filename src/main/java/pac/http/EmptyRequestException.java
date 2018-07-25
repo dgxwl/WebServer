@@ -30,5 +30,8 @@ public class EmptyRequestException extends Exception {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	@Override
+	public Throwable fillInStackTrace() {
+		return this;
+	}
 }

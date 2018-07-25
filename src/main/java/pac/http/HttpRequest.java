@@ -168,4 +168,8 @@ public class HttpRequest {
 	public String getParameter(String name) {
 		return parameters.get(name);
 	}
+	
+	public Map<String, String> getParameterMap() {
+		return parameters;
+	}
 }
